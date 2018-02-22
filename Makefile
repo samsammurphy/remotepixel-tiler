@@ -15,11 +15,10 @@ custom:
 	docker stop lambda
 	docker rm lambda
 
-
 deploy:
-	sls deploy --sat cbers
-	sls deploy --sat landsat
-	sls deploy --sat sentinel
+	sls deploy --sat cbers --stage test	
+	sls deploy --sat landsat --stage test
+	sls deploy --sat sentinel --stage test
 
 clean:
 	docker stop lambda
