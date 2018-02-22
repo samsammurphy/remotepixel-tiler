@@ -6,7 +6,7 @@ provider:
   stage: ${opt:stage, 'production'}
   region: ${file(./satellites/${opt:sat}.yml):region}
   iamRoleStatements: ${file(./satellites/${opt:sat}.yml):iam}
-  deploymentBucket: remotepixel-${self:provider.region}
+  deploymentBucket: remotepixel-${opt:sat}-${self:provider.region}
   environment: ${file(./satellites/${opt:sat}.yml):env}
 
 custom:
